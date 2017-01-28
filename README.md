@@ -3,12 +3,12 @@
 Vagrant Ansible creates a Vagrant installation with the following features:
 
 - Debian 8 (Jessie)
-- Nginx 1.10.2 *
+- Nginx 1.10.2 \*
 - PHP 7.0
-- Git 2.1.4 *
-- Composer 1.4-dev *
+- Git 2.1.4 \*
+- Composer 1.4-dev \*
 
-* Setup with install the latest module version
+\* Setup with install the latest module version
 
 
 ## Requirements
