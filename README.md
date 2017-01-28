@@ -3,6 +3,7 @@
 Vagrant Ansible creates a Vagrant installation with the following features:
 
 - Debian 8 (Jessie)
+- VirtualBox Guest Addition
 - Nginx 1.10.2 \*
 - PHP 7.0
 - Git 2.1.4 \*
