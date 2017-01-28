@@ -1,0 +1,9 @@
+---
+- name: Install Memcached and Dependencies
+  apt: pkg={{ item }} state=present
+  with_items:
+    - libmemcache-dev
+    - memcached
+
+- name: Start Memcached
+  service: name=memcached state=started enabled=true

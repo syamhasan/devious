@@ -1,0 +1,27 @@
+---
+- name: nginx | Install Nginx
+  apt: pkg={{ item }} state=present
+  with_items:
+    - nginx
+  tags: nginx
+
+- name: nginx | Removes "sites-enabled" directory to clean nginx sites configuration
+  file:
+    state: absent
+    path: "/etc/nginx/sites-enabled"
+  tags: nginx
+
+- name: nginx | Create "sites-enabled" directory
+  file:
+    state: directory
+    path: "/etc/nginx/sites-enabled"
+  tags: nginx
+
+- name: nginx | Copy default site configuration
+  template: src=00-default.conf dest=/etc/nginx/sites-enabled/
+  notify: restart nginx
+  tags: nginx
+
+- name: nginx | restart nginx
+  service: name=nginx state=restarted
+  tags: nginx

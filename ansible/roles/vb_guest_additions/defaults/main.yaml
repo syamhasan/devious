@@ -1,0 +1,7 @@
+kernel: 3.16.0-4-amd64
+virtualbox:
+  guest_additions:
+    version: 4.3.36
+    iso_url: http://download.virtualbox.org/virtualbox/4.3.36/VBoxGuestAdditions_4.3.36.iso
+    iso_dir: /tmp
+    iso_mountdir: /media/VBoxGuestAdditions

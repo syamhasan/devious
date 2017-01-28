@@ -1,0 +1,12 @@
+---
+- name: Devious - An awesome LEMP stack Ansible for Software Engineers
+  hosts: development
+  user: vagrant
+  become: true
+
+  roles:
+    - vb-guest-additions
+    - system
+    - php
+    - memcached
+    - nginx
