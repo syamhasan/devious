@@ -59,7 +59,7 @@ Run...
 vagrant up
 ```
 
-And wait... there will be a prompt asking for your machine admin/root password, just enter them. This is let Hostupdater do his job on the `/etc/hosts` file.
+And wait... there will be a prompt asking for your machine admin/root password, just enter them. This will allow Hostupdater to do it's job on the `/etc/hosts` file.
 
 ... and you're done!
 
