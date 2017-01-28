@@ -1,5 +1,5 @@
 ---
-- name: Install PHP and Dependencies
+- name: PHP | Install PHP and Dependencies
   apt: pkg={{ item }} state=present
   with_items:
     - php7.0-fpm
@@ -15,12 +15,12 @@
     - php7.0-mbstring
     - php7.0-zip
 
-- name: Install Composer
+- name: PHP | Install Composer
   get_url: url=https://getcomposer.org/composer.phar dest=/usr/local/bin/composer mode=0755 validate_certs=no
 
-- name: Copy pool configuration
+- name: PHP | Copy pool configuration
   template: src=www.conf dest=/etc/php/7.0/fpm/pool.d/
   notify: restart php7.0-fpm
 
-- name: Restart PHP Server
+- name: PHP | Restart PHP Server
   service: name=php7.0-fpm state=started enabled=true

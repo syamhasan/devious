@@ -1,0 +1,20 @@
+---
+- name: Node.js | Download installer
+  get_url: url=https://deb.nodesource.com/setup_7.x dest=/tmp
+  tags: nodejs
+
+- name: Node.js | Execute installer
+  shell: sh /tmp/setup_7.x
+  tags: nodejs
+
+- name: Node.js | Install package and dependencies
+  apt: pkg={{ item }} state=present
+  with_items:
+    - nodejs
+    - build-essential
+
+- name: Node.js | Install required node development packages
+  command: npm install -g {{ item }}
+  with_items:
+    - grunt-cli
+    - bower

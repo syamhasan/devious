@@ -1,0 +1,12 @@
+---
+- name: MySQL | Set password
+  debconf: name='mysql-server' question='mysql-server/root_password' value='{{ mysql_root_password | quote }}' vtype='password'
+  tags: mysql
+
+- name: MySQL | Set password confirmation
+  debconf: name='mysql-server' question='mysql-server/root_password_again' value='{{ mysql_root_password | quote }}' vtype='password'
+
+- name: MySQL | Install MySQL
+  apt: pkg={{ item }} state=present
+  with_items:
+    - mysql-server

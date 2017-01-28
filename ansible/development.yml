@@ -5,8 +5,12 @@
   become: true
 
   roles:
-    - vb-guest-additions
+    # - vbox_guest_additions    # on enable vbox_guest_additions if required
     - system
-    - php
+    - git
+    - nodejs                    # tasks includes grunt-cli and bower
+    - ruby                      # tasks includes sass
+    - mysql
+    - php                       # tasks includes composer
     - memcached
     - nginx

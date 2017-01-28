@@ -1,0 +1,10 @@
+---
+- name: Ruby | Install package
+  apt: pkg={{ item }} state=present
+  with_items:
+    - ruby-full
+
+- name: Ruby | Install required ruby development packages
+  command: gem install {{ item }}
+  with_items:
+    - sass

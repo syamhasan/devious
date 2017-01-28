@@ -3,18 +3,62 @@
 Vagrant Ansible creates a Vagrant installation with the following features:
 
 - Debian 8 (Jessie)
-- VirtualBox Guest Addition
-- Nginx 1.10.2 \*
+- VirtualBox Guest Additions (optional installation feature)
+- System essential packages (ViM, curl, etc)
+- Nginx
 - PHP 7.0
-- Git 2.1.4 \*
-- Composer 1.4-dev \*
+- Git
+- Composer
+- NodeJs 7
+- Ruby
+- MySql-Server
+- Memcached
+
+Development packages also includes:
+
+- SASS
+- Grunt CLI
+- Bower
 
 \* Setup with install the latest module version
-
 
 ## Requirements
 
 - [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 - [Vagrant](http://www.vagrantup.com/downloads.html)
-- [Vagrant hostupdater](https://github.com/cogitatio/vagrant-hostsupdater).
-- [Ansible](http://docs.ansible.com/intro_installation.html).
+- [Vagrant Hostupdater](https://github.com/cogitatio/vagrant-hostsupdater)
+- [Vagrant VirtualBox Guest Additions](https://github.com/dotless-de/vagrant-vbguest)
+- [Ansible](http://docs.ansible.com/intro_installation.html)
+
+## Vagrant Requirements
+
+Before running `vagrant up`, please make sure that you've installed the required Vagrant plugins:
+
+- [Vagrant Hostupdater](https://github.com/cogitatio/vagrant-hostsupdater)
+- [Vagrant VirtualBox Guest Additions](https://github.com/dotless-de/vagrant-vbguest)
+
+### Vagrant::Hostupdater
+
+```
+vagrant plugin install vagrant-hostsupdater
+```
+
+### Vagrant::VirtualBox Guest Additions
+
+```
+vagrant plugin install vagrant-vbguest
+```
+
+## Get Started
+
+Run...
+
+```
+vagrant up
+```
+
+And wait... there will be a prompt asking for your machine admin/root password, just enter them. This is let Hostupdater do his job on the `/etc/hosts` file.
+
+... and you're done!
+
+You local development machine address is [http://localhost.devio.us](http://localhost.devio.us).

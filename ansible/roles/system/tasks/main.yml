@@ -1,19 +1,23 @@
 ---
-- name: Add debian/jessie full package repository
+- name: System | Add debian/jessie full package repository
   apt_repository: repo="deb http://packages.dotdeb.org jessie all"
 
-- name: Fetch and install debian/jessie full package repository key
+- name: System | Fetch and install debian/jessie full package repository key
   apt_key: url="https://www.dotdeb.org/dotdeb.gpg"
 
-- name: Apt-get update before installing
+- name: System | Update all repository packages
   apt: update_cache=yes
 
-- name: Install Essential Packages
+- name: System | Update all packages to the latest version
+  apt: upgrade=dist
+
+- name: System | Install essential packages
   apt: pkg={{ item }} state=present
   with_items:
     - vim
     - curl
     - python-pycurl
 
-- name: Install Git
-  apt: pkg=git-core state=present
+- name: System | Configure ViM
+  template: src=bashrc dest=~/.bashrc
+  notify: source bashrc
