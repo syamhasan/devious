@@ -53,6 +53,11 @@ In case, somehow, you don't do this, or you just don't require this on you machi
 
 ## Get Started
 
+```bash
+cd scripts
+bash firstrun.sh
+```
+
 Run...
 
 ```
